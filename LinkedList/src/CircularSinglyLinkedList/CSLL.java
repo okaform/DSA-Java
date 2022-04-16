@@ -32,34 +32,14 @@ public class CSLL {
 
         else if (location == 0) { //insert at the head
             newNode.nextReference = head; //new node should point to the head which points to the first node
-            //System.out.println("new node ref is " + newNode.nextReference.value);
-
-            head = newNode; //then points to the new node
-            System.out.println("head ref is now " + newNode.nextReference.value);
-            Node lastNode = head;
-            for (int i = 0; i < size - 1; i++) { //loop through to get the last node in the list
-                lastNode = lastNode.nextReference;
-            }
-            lastNode.nextReference = newNode; //this makes sure that the last node references this first Node
+            tail.nextReference = newNode; //Point the last node reference to the newly added first node
+            head = newNode; //change the head to new node
         }
 
         else if (location >= size) {//insert at the end of a list
-            Node tempNode = head;
-
-            for (int i = 0; i < size; i++) {
-                System.out.println("size is "+size);
-                tempNode= tempNode.nextReference;//keep moving through the nodes till we get to the last one
-            }
-            newNode.nextReference = head; //tempNode.nextReference; //let them have matching references
-
-
-            //System.out.println("new node inserted reference is " + newNode.nextReference.value);
-            tempNode.nextReference = newNode; //change the last node's reference to the new node
-
-            //System.out.println("last node reference is " + tempNode.nextReference.value);
-
-            tail = newNode; //change tail reference to point to the new node if size is = 0
-            //tail.nextReference = head; //the reference should point to the first
+            newNode.nextReference = head;
+            tail.nextReference = newNode;
+            tail = newNode;
         }
 
         else { //insert at any given location
@@ -70,11 +50,91 @@ public class CSLL {
                 index++;
             }
 
-            Node nextNode = tempNode.nextReference;
-            tempNode.nextReference =newNode;
-            newNode.nextReference = nextNode;
+            newNode.nextReference = tempNode.nextReference;
+            tempNode.nextReference = newNode;
         }
 
         size++; //increase the size
+    }
+
+
+    public void traverseCircularSinglyLinkedList() {
+        if (head == null) {
+            System.out.println("Circular Singly Linked List does not exist.");
+        }
+        else {
+            Node tempNode = head;
+            for (int i = 0; i < size; i++) {
+                System.out.print(tempNode.value);
+                if (i != size -1) { //prints this out every time except for the last value
+                    System.out.print(" -> ");
+                }
+                tempNode = tempNode.nextReference;
+            }
+            System.out.println("\n");
+        }
+    }
+
+    //search for a node
+    boolean searchNode(int nodeValue) {
+        if (head != null) {
+            Node tempNode = head;
+            for (int i = 0; i < size; i++) {
+                if (tempNode.value == nodeValue) {
+                    System.out.println("We found the value " + nodeValue + " at location " + i + "\n");
+                    return  true;
+                }
+                tempNode = tempNode.nextReference;
+            }
+        }
+        System.out.println("Node not found");
+        return false;
+    }
+
+    //delete Node
+    public void deleteNode(int location) {
+        if (head == null) {
+            System.out.println("Circular Singly Linked List doesn't exists.");
+        }
+        else if (location == 0) {
+            head = head.nextReference;
+            tail.nextReference = head;
+            size--;
+            if (size == 0) {
+                tail = head;
+            }
+        }
+        else if (location >= size) {
+            Node tempNode = head;
+            for (int i = 0; i < size -1; i++) { //loop until we get to the node just before the last node
+                tempNode = tempNode.nextReference;
+            }
+            if (tempNode == head) {//only one element in the list
+                head = tail = null;
+                size--;
+                return;
+            }
+
+            tempNode.nextReference = head;
+            tail = tempNode;
+            size--;
+        }
+        else {
+            int index = 0;
+            Node tempNode = head;
+            while (index < location -1) {
+                tempNode = tempNode.nextReference;
+                index++;
+            }
+            Node toDelete = tempNode.nextReference;
+            tempNode.nextReference = toDelete.nextReference;
+            size--;
+        }
+    }
+
+    public void deleteCSLL() {
+        head = null;
+        tail = null;
+        System.out.println("CSLL has been deleted successfully. ");
     }
 }
