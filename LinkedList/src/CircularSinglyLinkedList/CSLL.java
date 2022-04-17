@@ -95,13 +95,15 @@ public class CSLL {
     public void deleteNode(int location) {
         if (head == null) {
             System.out.println("Circular Singly Linked List doesn't exists.");
+            return;
         }
         else if (location == 0) {
             head = head.nextReference;
             tail.nextReference = head;
             size--;
             if (size == 0) {
-                tail = head;
+                tail = head = null;
+                head.nextReference = null;
             }
         }
         else if (location >= size) {
@@ -111,6 +113,7 @@ public class CSLL {
             }
             if (tempNode == head) {//only one element in the list
                 head = tail = null;
+                head.nextReference = null;
                 size--;
                 return;
             }
@@ -133,8 +136,14 @@ public class CSLL {
     }
 
     public void deleteCSLL() {
-        head = null;
-        tail = null;
-        System.out.println("CSLL has been deleted successfully. ");
+        if (head == null) {
+            System.out.println("The CSLL does not exist!");
+        }
+        else {
+            head = null;
+            tail.nextReference = null;
+            tail = null;
+            System.out.println("CSLL has been deleted successfully. ");
+        }
     }
 }

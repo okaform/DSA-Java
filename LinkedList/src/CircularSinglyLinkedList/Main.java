@@ -25,7 +25,7 @@ public class Main {
         csll.traverseCircularSinglyLinkedList();
 
 
-        csll.deleteCSLL();
+        csll.deleteNode(45);
 
         csll.traverseCircularSinglyLinkedList();
 
