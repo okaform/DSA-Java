@@ -23,6 +23,7 @@ public class SLL { //SLL means Singly Linked List
         tail = copyNode;
         size = 1;
 
+
         return head;
     }
 
