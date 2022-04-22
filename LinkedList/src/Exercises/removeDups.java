@@ -30,6 +30,7 @@ public class removeDups {
     public static int nthToLast(LinkedList list, int number) {
         Node currNode = list.head;
         Node prev = null;
+        System.out.println("");
 
         if (number >= list.size) {
             return currNode.value;
