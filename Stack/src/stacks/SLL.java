@@ -1,16 +1,18 @@
+package stacks;
+
 class Node {
     public int value;
     public Node nextReference;
 }
 
-public class SLL { //SLL means Singly Linked List
+public class SLL { //stacks.SLL means Singly Linked List
 
     public Node head;
     public Node tail;
     public int size;
 
     public Node createSinglyLinkedList(int nodeValue) {
-        //head = new Node();
+        //head = new stacks.Node();
         //node is created so we can add the node value to both the head and the tail.
         //The data structure is of node that we created.
         Node copyNode = new Node();
@@ -93,7 +95,7 @@ public class SLL { //SLL means Singly Linked List
                 tempNode = tempNode.nextReference;
             }
         }
-        System.out.println("Node not found!");
+        System.out.println("stacks.Node not found!");
         return false;
     }
 
@@ -153,7 +155,7 @@ public class SLL { //SLL means Singly Linked List
     public void deleteSLL() {
         head = null;
         tail = null;
-        System.out.println("SLL has been deleted successfully");
+        System.out.println("stacks.SLL has been deleted successfully");
     }
 
 

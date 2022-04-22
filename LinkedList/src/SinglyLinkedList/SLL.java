@@ -5,7 +5,7 @@ class Node {
     public Node nextReference;
 }
 
-public class SLL { //SLL means Singly Linked List
+public class SLL { //stacks.SLL means Singly Linked List
 
     public Node head;
     public Node tail;
@@ -156,7 +156,7 @@ public class SLL { //SLL means Singly Linked List
     public void deleteSLL() {
         head = null;
         tail = null;
-        System.out.println("SLL has been deleted successfully");
+        System.out.println("stacks.SLL has been deleted successfully");
     }
 
 

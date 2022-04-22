@@ -1,4 +1,6 @@
+package stacks;
 
+import stacks.SLL;
 
 public class StackinList {
 
@@ -13,7 +15,7 @@ public class StackinList {
     //push method
     public void push (int value) {
         singleLinkedList.insertInLinkedList(value, 0); //everytime, it will be zero
-        System.out.println("Inserted "+ value +" in Stack List.");
+        System.out.println("Inserted "+ value +" in stacks.Stack List.");
     }
 
     //isEmpty method

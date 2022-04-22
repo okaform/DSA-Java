@@ -1,3 +1,5 @@
+package stacks;
+
 public class Stack {
 
     int[] arr;
@@ -6,7 +8,7 @@ public class Stack {
     public Stack (int size) {
         this.arr = new int[size];
         this.topOfStack = -1; //this means that stack is empty
-        System.out.println("The Stack is created with size of: " + size);
+        System.out.println("The stacks.Stack is created with size of: " + size);
     }
 
     //isEmpty
@@ -29,7 +31,7 @@ public class Stack {
     //push method
     public void push (int value) {
         if (isFull()) {
-            System.out.println("The Stack is full!");
+            System.out.println("The stacks.Stack is full!");
         }
         else {
             arr[topOfStack+1] = value; //add to the array. it will start at one
@@ -42,12 +44,12 @@ public class Stack {
     //pop method
     public int pop () {
         if (isEmpty()) {
-            System.out.println("The Stack is empty");
+            System.out.println("The stacks.Stack is empty");
             return -1;
         }
         else {
             int topStack = arr[topOfStack];//make topStack equal to the value in the array
-            topOfStack --; //decrease top of Stack since we are going down
+            topOfStack --; //decrease top of stacks.Stack since we are going down
             return topStack; //return the top of stack that we deleted
         }
     }
@@ -67,6 +69,6 @@ public class Stack {
     public void deleteStack() {
         arr = null;
         topOfStack= -1;
-        System.out.println("The Stack is successfully deleted");
+        System.out.println("The stacks.Stack is successfully deleted");
     }
 }
