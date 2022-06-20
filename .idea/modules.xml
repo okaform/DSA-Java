@@ -16,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tree/Tree.iml" filepath="$PROJECT_DIR$/Tree/Tree.iml" />
       <module fileurl="file://$PROJECT_DIR$/Trie/Trie.iml" filepath="$PROJECT_DIR$/Trie/Trie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serving/serving.iml" filepath="$PROJECT_DIR$/serving/serving.iml" />
     </modules>
   </component>
 </project>
